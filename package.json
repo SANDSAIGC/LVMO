@@ -1,0 +1,21 @@
+{
+  "name": "lvmo-massage-chair-miniprogram",
+  "version": "1.0.0",
+  "description": "旅摩·车载按摩椅小程序",
+  "main": "app.js",
+  "scripts": {
+    "dev": "echo '请使用微信开发者工具打开项目'",
+    "build": "echo '请使用微信开发者工具构建npm'"
+  },
+  "dependencies": {
+    "tdesign-miniprogram": "^1.4.0"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "miniprogram",
+    "massage-chair",
+    "tdesign"
+  ],
+  "author": "旅摩团队",
+  "license": "MIT"
+}
