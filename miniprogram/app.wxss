@@ -1,447 +1,213 @@
-/* 旅摩·车载按摩椅小程序 - 全局样式 */
-
-/* 引入TDesign主题定制 */
-@import "styles/theme/tdesign-theme.wxss";
-
-/* CSS 变量定义 */
-:root {
-  /* 品牌主色 */
-  --lvmo-color-brand-gold: #D4AF37;
-  --lvmo-color-brand-gold-light: #E6C866;
-  --lvmo-color-brand-gold-dark: #B8941F;
-  --lvmo-color-brand-blue: #1B365D;
-  --lvmo-color-brand-blue-light: #2A4A73;
-  --lvmo-color-brand-blue-dark: #0F1F35;
-
-  /* 辅助色 */
-  --lvmo-color-warm-gray: #F5F3F0;
-  --lvmo-color-warm-gray-light: #FAFAF9;
-  --lvmo-color-warm-gray-dark: #E8E4DF;
-  --lvmo-color-brown: #8B6F47;
-
-  /* 功能色 */
-  --lvmo-color-success: #52C41A;
-  --lvmo-color-warning: #FA8C16;
-  --lvmo-color-error: #F5222D;
-  --lvmo-color-info: #1890FF;
-
-  /* 文字色 */
-  --lvmo-color-text-primary: #262626;
-  --lvmo-color-text-secondary: #595959;
-  --lvmo-color-text-tertiary: #8C8C8C;
-  --lvmo-color-text-disabled: #BFBFBF;
-  --lvmo-color-text-on-brand: #FFFFFF;
-  --lvmo-color-text-link: var(--lvmo-color-brand-gold);
-
-  /* 背景色 */
-  --lvmo-color-background-primary: #FFFFFF;
-  --lvmo-color-background-secondary: var(--lvmo-color-warm-gray-light);
-  --lvmo-color-background-page: var(--lvmo-color-warm-gray);
-  --lvmo-color-background-overlay: rgba(0, 0, 0, 0.6);
-
-  /* 边框色 */
-  --lvmo-color-border-primary: #D9D9D9;
-  --lvmo-color-border-secondary: #F0F0F0;
-  --lvmo-color-border-interactive: var(--lvmo-color-brand-gold);
-
-  /* 字体 */
-  --lvmo-font-family-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  --lvmo-font-family-mono: 'SF Mono', Monaco, Inconsolata, 'Roboto Mono', 'Source Code Pro', Menlo, Consolas, 'Courier New', monospace;
-  
-  --lvmo-font-size-xs: 11px;
-  --lvmo-font-size-sm: 12px;
-  --lvmo-font-size-md: 14px;
-  --lvmo-font-size-lg: 16px;
-  --lvmo-font-size-xl: 18px;
-  --lvmo-font-size-2xl: 20px;
-  --lvmo-font-size-3xl: 24px;
-  --lvmo-font-size-4xl: 28px;
-  --lvmo-font-size-display: 32px;
-
-  --lvmo-font-weight-light: 300;
-  --lvmo-font-weight-normal: 400;
-  --lvmo-font-weight-medium: 500;
-  --lvmo-font-weight-semibold: 600;
-  --lvmo-font-weight-bold: 700;
-
-  --lvmo-line-height-tight: 1.2;
-  --lvmo-line-height-normal: 1.5;
-  --lvmo-line-height-loose: 1.8;
-
-  /* 间距 */
-  --lvmo-spacing-unit: 4px;
-  --lvmo-spacing-xs: 4px;
-  --lvmo-spacing-sm: 8px;
-  --lvmo-spacing-md: 12px;
-  --lvmo-spacing-lg: 16px;
-  --lvmo-spacing-xl: 20px;
-  --lvmo-spacing-2xl: 24px;
-  --lvmo-spacing-3xl: 32px;
-  --lvmo-spacing-page-horizontal: 16px;
-  --lvmo-spacing-page-vertical: 20px;
-
-  /* 圆角 */
-  --lvmo-border-radius-sm: 4px;
-  --lvmo-border-radius-md: 6px;
-  --lvmo-border-radius-lg: 8px;
-  --lvmo-border-radius-xl: 12px;
-  --lvmo-border-radius-round: 50%;
-  --lvmo-border-radius-pill: 999px;
-
-  /* 阴影 */
-  --lvmo-shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --lvmo-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
-  --lvmo-shadow-md: 0 2px 8px rgba(0, 0, 0, 0.1);
-  --lvmo-shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.1);
-  --lvmo-shadow-xl: 0 8px 32px rgba(0, 0, 0, 0.12);
-  --lvmo-shadow-focus: 0 0 0 3px rgba(212, 175, 55, 0.3);
-
-  /* 过渡动画 */
-  --lvmo-transition-duration-fast: 0.15s;
-  --lvmo-transition-duration-normal: 0.3s;
-  --lvmo-transition-timing-function: ease-out;
-  
-  /* Z-Index */
-  --lvmo-z-index-dropdown: 1000;
-  --lvmo-z-index-modal: 1050;
-  --lvmo-z-index-toast: 1100;
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
-/* 全局基础样式 */
+/* Tesla风格全局样式 */
 page {
-  font-family: var(--lvmo-font-family-sans);
-  font-size: var(--lvmo-font-size-md);
-  color: var(--lvmo-color-text-primary);
-  background-color: var(--lvmo-color-background-page);
-  line-height: var(--lvmo-line-height-normal);
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* 通用组件样式 */
+/* 玻璃拟态效果 */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16rpx;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.3);
+}
 
-/* 主要按钮 */
-.btn-primary {
-  background: linear-gradient(135deg, var(--lvmo-color-brand-gold), var(--lvmo-color-brand-gold-dark));
-  color: var(--lvmo-color-text-on-brand);
+/* 按钮样式 */
+.tesla-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border: none;
-  border-radius: var(--lvmo-border-radius-md);
-  padding: var(--lvmo-spacing-sm) var(--lvmo-spacing-lg);
-  min-height: 40px;
-  font-weight: var(--lvmo-font-weight-medium);
-  font-size: var(--lvmo-font-size-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all var(--lvmo-transition-duration-fast) var(--lvmo-transition-timing-function);
-  box-shadow: var(--lvmo-shadow-sm);
+  border-radius: 12rpx;
+  color: white;
+  padding: 24rpx 48rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  box-shadow: 0 4rpx 16rpx rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
 }
 
-.btn-primary:active {
-  background: var(--lvmo-color-brand-gold-dark);
-  box-shadow: var(--lvmo-shadow-xs);
-  transform: translateY(1px);
-}
-
-/* 次要按钮 */
-.btn-secondary {
-  background: var(--lvmo-color-background-primary);
-  color: var(--lvmo-color-brand-blue);
-  border: 1px solid var(--lvmo-color-brand-blue);
-  border-radius: var(--lvmo-border-radius-md);
-  padding: var(--lvmo-spacing-sm) var(--lvmo-spacing-lg);
-  min-height: 40px;
-  font-weight: var(--lvmo-font-weight-medium);
-  font-size: var(--lvmo-font-size-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all var(--lvmo-transition-duration-fast) var(--lvmo-transition-timing-function);
-}
-
-.btn-secondary:active {
-  background: var(--lvmo-color-brand-blue-light);
-  color: var(--lvmo-color-text-on-brand);
-  border-color: var(--lvmo-color-brand-blue-light);
-}
-
-/* 文字按钮 */
-.btn-text {
-  background: transparent;
-  color: var(--lvmo-color-text-link);
-  border: none;
-  padding: var(--lvmo-spacing-xs) var(--lvmo-spacing-sm);
-  font-weight: var(--lvmo-font-weight-medium);
-  font-size: var(--lvmo-font-size-md);
-  transition: all var(--lvmo-transition-duration-fast) var(--lvmo-transition-timing-function);
-}
-
-.btn-text:active {
-  background: rgba(212, 175, 55, 0.2);
-}
-
-/* 卡片 */
-.card {
-  background: var(--lvmo-color-background-primary);
-  border-radius: var(--lvmo-border-radius-lg);
-  box-shadow: var(--lvmo-shadow-md);
-  padding: var(--lvmo-spacing-lg);
-  border: 1px solid var(--lvmo-color-border-secondary);
-  transition: all var(--lvmo-transition-duration-fast) var(--lvmo-transition-timing-function);
-}
-
-.card-premium {
-  background: linear-gradient(135deg, var(--lvmo-color-warm-gray-light), var(--lvmo-color-warm-gray));
-  border: 1px solid var(--lvmo-color-brand-gold-light);
-  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.1);
-}
-
-/* 输入框 */
-.input {
-  font-family: var(--lvmo-font-family-sans);
-  font-size: var(--lvmo-font-size-md);
-  color: var(--lvmo-color-text-primary);
-  background: var(--lvmo-color-background-primary);
-  border: 1px solid var(--lvmo-color-border-primary);
-  border-radius: var(--lvmo-border-radius-md);
-  padding: var(--lvmo-spacing-sm) var(--lvmo-spacing-md);
-  height: 40px;
-  transition: border-color var(--lvmo-transition-duration-fast) var(--lvmo-transition-timing-function), box-shadow var(--lvmo-transition-duration-fast) var(--lvmo-transition-timing-function);
-}
-
-.input:focus {
-  border-color: var(--lvmo-color-border-interactive);
-  box-shadow: var(--lvmo-shadow-focus);
-}
-
-/* 标签 */
-.tag {
-  display: inline-flex;
-  align-items: center;
-  padding: var(--lvmo-spacing-xs) var(--lvmo-spacing-sm);
-  font-size: var(--lvmo-font-size-sm);
-  font-weight: var(--lvmo-font-weight-medium);
-  border-radius: var(--lvmo-border-radius-sm);
-}
-
-.tag-brand {
-  background: var(--lvmo-color-brand-gold-light);
-  color: var(--lvmo-color-brand-gold-dark);
-}
-
-.tag-success {
-  background: rgba(82, 196, 26, 0.1);
-  color: var(--lvmo-color-success);
-}
-
-.tag-warning {
-  background: rgba(250, 140, 22, 0.1);
-  color: var(--lvmo-color-warning);
-}
-
-.tag-error {
-  background: rgba(245, 34, 45, 0.1);
-  color: var(--lvmo-color-error);
-}
-
-.tag-neutral {
-  background: var(--lvmo-color-background-secondary);
-  color: var(--lvmo-color-text-secondary);
-}
-
-/* 列表项 */
-.list-item {
-  display: flex;
-  align-items: center;
-  padding: var(--lvmo-spacing-md) var(--lvmo-spacing-page-horizontal);
-  border-bottom: 1px solid var(--lvmo-color-border-secondary);
-  min-height: 48px;
-  transition: background-color var(--lvmo-transition-duration-fast) var(--lvmo-transition-timing-function);
-}
-
-.list-item:active {
-  background-color: var(--lvmo-color-background-secondary);
-}
-
-.list-item-icon {
-  width: 20px;
-  height: 20px;
-  margin-right: var(--lvmo-spacing-md);
-  color: var(--lvmo-color-brand-blue);
-}
-
-.list-item-content {
-  flex: 1;
-}
-
-.list-item-title {
-  font-size: var(--lvmo-font-size-md);
-  color: var(--lvmo-color-text-primary);
-  font-weight: var(--lvmo-font-weight-normal);
-}
-
-.list-item-subtitle {
-  font-size: var(--lvmo-font-size-sm);
-  color: var(--lvmo-color-text-secondary);
-  margin-top: 2px;
-}
-
-.list-item-arrow {
-  width: 16px;
-  height: 16px;
-  color: var(--lvmo-color-text-tertiary);
-}
-
-/* 页面容器 */
-.page-container {
-  padding: var(--lvmo-spacing-page-vertical) var(--lvmo-spacing-page-horizontal);
-  min-height: 100vh;
-}
-
-/* 标题样式 */
-.title-h1 {
-  font-size: var(--lvmo-font-size-4xl);
-  font-weight: var(--lvmo-font-weight-semibold);
-  color: var(--lvmo-color-text-primary);
-  line-height: var(--lvmo-line-height-tight);
-}
-
-.title-h2 {
-  font-size: var(--lvmo-font-size-3xl);
-  font-weight: var(--lvmo-font-weight-semibold);
-  color: var(--lvmo-color-text-primary);
-  line-height: var(--lvmo-line-height-tight);
-}
-
-.title-h3 {
-  font-size: var(--lvmo-font-size-2xl);
-  font-weight: var(--lvmo-font-weight-medium);
-  color: var(--lvmo-color-text-primary);
-  line-height: var(--lvmo-line-height-tight);
-}
-
-.title-h4 {
-  font-size: var(--lvmo-font-size-xl);
-  font-weight: var(--lvmo-font-weight-medium);
-  color: var(--lvmo-color-text-primary);
-  line-height: var(--lvmo-line-height-normal);
+.tesla-button:active {
+  transform: translateY(2rpx);
+  box-shadow: 0 2rpx 8rpx rgba(102, 126, 234, 0.3);
 }
 
 /* 文本样式 */
+.title {
+  font-size: 48rpx;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16rpx;
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 32rpx;
+}
+
 .text-primary {
-  color: var(--lvmo-color-text-primary);
+  color: #667eea;
 }
 
 .text-secondary {
-  color: var(--lvmo-color-text-secondary);
+  color: rgba(255, 255, 255, 0.7);
 }
 
-.text-tertiary {
-  color: var(--lvmo-color-text-tertiary);
-}
-
-.text-brand {
-  color: var(--lvmo-color-brand-gold);
-}
-
-.text-brand-blue {
-  color: var(--lvmo-color-brand-blue);
-}
-
-/* 间距工具类 */
-.mt-xs { margin-top: var(--lvmo-spacing-xs); }
-.mt-sm { margin-top: var(--lvmo-spacing-sm); }
-.mt-md { margin-top: var(--lvmo-spacing-md); }
-.mt-lg { margin-top: var(--lvmo-spacing-lg); }
-.mt-xl { margin-top: var(--lvmo-spacing-xl); }
-.mt-2xl { margin-top: var(--lvmo-spacing-2xl); }
-
-.mb-xs { margin-bottom: var(--lvmo-spacing-xs); }
-.mb-sm { margin-bottom: var(--lvmo-spacing-sm); }
-.mb-md { margin-bottom: var(--lvmo-spacing-md); }
-.mb-lg { margin-bottom: var(--lvmo-spacing-lg); }
-.mb-xl { margin-bottom: var(--lvmo-spacing-xl); }
-.mb-2xl { margin-bottom: var(--lvmo-spacing-2xl); }
-
-.ml-xs { margin-left: var(--lvmo-spacing-xs); }
-.ml-sm { margin-left: var(--lvmo-spacing-sm); }
-.ml-md { margin-left: var(--lvmo-spacing-md); }
-.ml-lg { margin-left: var(--lvmo-spacing-lg); }
-
-.mr-xs { margin-right: var(--lvmo-spacing-xs); }
-.mr-sm { margin-right: var(--lvmo-spacing-sm); }
-.mr-md { margin-right: var(--lvmo-spacing-md); }
-.mr-lg { margin-right: var(--lvmo-spacing-lg); }
-
-/* 布局工具类 */
-.flex {
+/* 布局样式 */
+.flex-row {
   display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .flex-column {
+  display: flex;
   flex-direction: column;
-}
-
-.flex-center {
-  align-items: center;
-  justify-content: center;
-}
-
-.flex-between {
-  justify-content: space-between;
-}
-
-.flex-around {
-  justify-content: space-around;
-}
-
-.flex-1 {
-  flex: 1;
-}
-
-.items-center {
-  align-items: center;
 }
 
 .justify-center {
   justify-content: center;
 }
 
-/* 动画类 */
-.fade-in {
-  animation: fadeIn var(--lvmo-transition-duration-normal) var(--lvmo-transition-timing-function);
+.justify-between {
+  justify-content: space-between;
 }
 
-.slide-up {
-  animation: slideUp var(--lvmo-transition-duration-normal) var(--lvmo-transition-timing-function);
+.align-center {
+  align-items: center;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
+/* 间距样式 */
+.margin-top-small {
+  margin-top: 16rpx;
+}
+
+.margin-top-medium {
+  margin-top: 32rpx;
+}
+
+.margin-top-large {
+  margin-top: 48rpx;
+}
+
+.padding-small {
+  padding: 16rpx;
+}
+
+.padding-medium {
+  padding: 32rpx;
+}
+
+.padding-large {
+  padding: 48rpx;
+}
+
+/* 状态指示器 */
+.status-indicator {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  margin-right: 16rpx;
+}
+
+.status-connected {
+  background: #4CAF50;
+  box-shadow: 0 0 16rpx rgba(76, 175, 80, 0.5);
+}
+
+.status-disconnected {
+  background: #f44336;
+  box-shadow: 0 0 16rpx rgba(244, 67, 54, 0.5);
+}
+
+.status-connecting {
+  background: #ff9800;
+  box-shadow: 0 0 16rpx rgba(255, 152, 0, 0.5);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
   }
-  to {
+  50% {
+    opacity: 0.5;
+  }
+  100% {
     opacity: 1;
   }
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* 卡片样式 */
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16rpx;
+  padding: 32rpx;
+  margin: 16rpx;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.2);
 }
 
-/* 骨架屏动画 */
-.skeleton {
-  background: linear-gradient(90deg, var(--lvmo-color-background-secondary) 25%, #e0e0e0 50%, var(--lvmo-color-background-secondary) 75%);
-  background-size: 200% 100%;
-  animation: skeleton-loading 1.5s infinite linear;
+/* 输入框样式 */
+.input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12rpx;
+  padding: 24rpx;
+  color: white;
+  font-size: 32rpx;
 }
 
-@keyframes skeleton-loading {
-  0% { background-position: 200% 0; }
-  100% { background-position: -200% 0; }
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* 列表样式 */
+.list-item {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12rpx;
+  padding: 32rpx;
+  margin-bottom: 16rpx;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.list-item:active {
+  background: rgba(255, 255, 255, 0.1);
+  transform: scale(0.98);
+}
+
+/* 加载动画 */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 64rpx;
+}
+
+.loading-spinner {
+  width: 64rpx;
+  height: 64rpx;
+  border: 4rpx solid rgba(255, 255, 255, 0.2);
+  border-top: 4rpx solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

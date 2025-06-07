@@ -3,19 +3,15 @@
     "pages/index/index",
     "pages/auth/login",
     "pages/auth/confirm",
-    "pages/user/user",
     "pages/connect/connect",
     "pages/service/service",
     "pages/massage/massage",
-    "pages/pay/confirm",
-    "pages/pay/process",
-    "pages/pay/result",
-    "pages/user/profile"
+    "pages/history/history",
+    "pages/user/user"
   ],
-  "subpackages": [
+  "subPackages": [
     {
-      "root": "pages_sub/massage/",
-      "name": "massagePack",
+      "root": "pages_sub/massage",
       "pages": [
         "mode/mode",
         "intensity/intensity",
@@ -23,50 +19,46 @@
       ]
     },
     {
-      "root": "pages_sub/user/",
-      "name": "userPack",
+      "root": "pages_sub/user",
       "pages": [
         "history/history",
         "coupon/coupon",
         "settings/settings",
-        "feedback/feedback",
-        "about/about"
+        "about/about",
+        "feedback/feedback"
       ]
     }
   ],
-  "preloadRule": {
-    "pages/index/index": {
-      "network": "all",
-      "packages": ["massagePack"]
-    },
-    "pages/user/profile": {
-      "network": "wifi",
-      "packages": ["userPack"]
-    },
-    "pages/massage/massage": {
-      "network": "all",
-      "packages": ["massagePack"]
-    }
-  },
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#2C3E50",
+    "navigationBarBackgroundColor": "#1a1a2e",
     "navigationBarTitleText": "旅摩·车载按摩椅",
     "navigationBarTextStyle": "white",
-    "enablePullDownRefresh": false,
-    "backgroundColor": "#f8f8f8"
+    "backgroundColor": "#0f0f23"
   },
   "tabBar": {
     "color": "#7A7E83",
-    "selectedColor": "#2FB8FF",
-    "borderStyle": "white",
-    "backgroundColor": "#ffffff",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#1a1a2e",
     "list": [
       {
         "pagePath": "pages/index/index",
         "iconPath": "images/icon_home.png",
         "selectedIconPath": "images/icon_home_selected.png",
         "text": "首页"
+      },
+      {
+        "pagePath": "pages/service/service",
+        "iconPath": "images/icon_service.png",
+        "selectedIconPath": "images/icon_service.png",
+        "text": "服务"
+      },
+      {
+        "pagePath": "pages/history/history",
+        "iconPath": "images/icon_history.png",
+        "selectedIconPath": "images/icon_history.png",
+        "text": "记录"
       },
       {
         "pagePath": "pages/user/user",
@@ -78,12 +70,5 @@
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents",
-  "rendererOptions": {
-    "skyline": {
-      "defaultDisplayBlock": true,
-      "disableABTest": true
-    }
-  },
-  "componentFramework": "glass-easel"
+  "lazyCodeLoading": "requiredComponents"
 }
