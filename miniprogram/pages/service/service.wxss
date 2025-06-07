@@ -1,0 +1,74 @@
+/* miniprogram/pages/service/service.wxss */
+.service-container {
+  padding: 30rpx;
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 100%);
+  min-height: 100vh;
+}
+
+.header {
+  margin-bottom: 40rpx;
+}
+
+.title {
+  font-size: 44rpx;
+  font-weight: bold;
+  color: white;
+  display: block;
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30rpx;
+}
+
+.service-item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 20rpx;
+  padding: 30rpx;
+  text-align: center;
+  backdrop-filter: blur(10rpx);
+  border: 1rpx solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.service-item:active {
+  transform: scale(0.98);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.icon-container {
+  position: relative;
+  margin-bottom: 20rpx;
+}
+
+.service-icon {
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.favorite-icon {
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+  width: 40rpx;
+  height: 40rpx;
+  z-index: 10;
+}
+
+.service-name {
+  font-size: 32rpx;
+  color: white;
+  display: block;
+  margin-bottom: 10rpx;
+}
+
+.service-duration {
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.7);
+}
