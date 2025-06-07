@@ -1,0 +1,37 @@
+<!-- miniprogram/pages/service/service.wxml -->
+<view class="service-container">
+  <view class="header">
+    <text class="title">选择按摩服务</text>
+    <text class="subtitle">请选择您需要的按摩模式</text>
+  </view>
+
+  <view class="service-grid">
+    <block wx:for="{{services}}" wx:key="id">
+      <view 
+        class="service-item" 
+        bindtap="selectService" 
+        data-id="{{item.id}}"
+      >
+        <view class="icon-container">
+          <image src="/images/{{item.icon}}.png" class="service-icon" />
+          <image 
+            wx:if="{{favorites.includes(item.id)}}" 
+            src="/images/favorite-filled.png" 
+            class="favorite-icon"
+            bindtap="toggleFavorite" 
+            data-id="{{item.id}}"
+          />
+          <image 
+            wx:else 
+            src="/images/favorite-outline.png" 
+            class="favorite-icon"
+            bindtap="toggleFavorite" 
+            data-id="{{item.id}}"
+          />
+        </view>
+        <text class="service-name">{{item.name}}</text>
+        <text class="service-duration">{{item.duration}}分钟</text>
+      </view>
+    </block>
+  </view>
+</view>
