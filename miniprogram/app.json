@@ -1,0 +1,89 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/auth/login",
+    "pages/auth/confirm",
+    "pages/user/user",
+    "pages/connect/connect",
+    "pages/service/service",
+    "pages/massage/massage",
+    "pages/pay/confirm",
+    "pages/pay/process",
+    "pages/pay/result",
+    "pages/user/profile"
+  ],
+  "subpackages": [
+    {
+      "root": "pages_sub/massage/",
+      "name": "massagePack",
+      "pages": [
+        "mode/mode",
+        "intensity/intensity",
+        "duration/duration"
+      ]
+    },
+    {
+      "root": "pages_sub/user/",
+      "name": "userPack",
+      "pages": [
+        "history/history",
+        "coupon/coupon",
+        "settings/settings",
+        "feedback/feedback",
+        "about/about"
+      ]
+    }
+  ],
+  "preloadRule": {
+    "pages/index/index": {
+      "network": "all",
+      "packages": ["massagePack"]
+    },
+    "pages/user/profile": {
+      "network": "wifi",
+      "packages": ["userPack"]
+    },
+    "pages/massage/massage": {
+      "network": "all",
+      "packages": ["massagePack"]
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#2C3E50",
+    "navigationBarTitleText": "旅摩·车载按摩椅",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false,
+    "backgroundColor": "#f8f8f8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#2FB8FF",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/icon_home.png",
+        "selectedIconPath": "images/icon_home_selected.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "images/icon_user.png",
+        "selectedIconPath": "images/icon_user_selected.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "rendererOptions": {
+    "skyline": {
+      "defaultDisplayBlock": true,
+      "disableABTest": true
+    }
+  },
+  "componentFramework": "glass-easel"
+}
