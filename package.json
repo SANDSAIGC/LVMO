@@ -1,21 +1,21 @@
 {
-  "name": "lvmo-massage-chair-miniprogram",
-  "version": "1.0.0",
-  "description": "旅摩·车载按摩椅小程序",
+  "name": "lvmo-massage-chair",
+  "version": "1.2.0",
+  "description": "旅摩车载按摩椅小程序",
   "main": "app.js",
   "scripts": {
-    "dev": "echo '请使用微信开发者工具打开项目'",
-    "build": "echo '请使用微信开发者工具构建npm'"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "tdesign-miniprogram": "^1.4.0"
-  },
-  "devDependencies": {},
   "keywords": [
     "miniprogram",
-    "massage-chair",
-    "tdesign"
+    "massage",
+    "chair",
+    "bluetooth",
+    "cloudbase"
   ],
-  "author": "旅摩团队",
-  "license": "MIT"
+  "author": "旅摩科技",
+  "license": "MIT",
+  "dependencies": {
+    "@cloudbase/js-sdk": "^2.16.0"
+  }
 }

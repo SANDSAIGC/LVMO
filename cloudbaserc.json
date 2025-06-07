@@ -1,61 +1,54 @@
 {
   "envId": "sands-0guvvxuy305fdeff",
-  "version": "2.0",
-  "framework": {
-    "name": "miniprogram",
-    "plugins": {
-      "client": {
-        "use": "@cloudbase/framework-plugin-mp",
-        "inputs": {
-          "localPath": "./miniprogram",
-          "remoteObjectPath": "/miniprogram"
-        }
-      },
-      "server": {
-        "use": "@cloudbase/framework-plugin-function",
-        "inputs": {
-          "functionRootPath": "./cloudfunctions",
-          "functions": [
-            {
-              "name": "getOpenId",
-              "timeout": 5,
-              "envVariables": {},
-              "runtime": "Nodejs18.15",
-              "memorySize": 128,
-              "handler": "index.main"
-            }
-          ]
-        }
-      },
-      "database": {
-        "use": "@cloudbase/framework-plugin-database",
-        "inputs": {
-          "collections": [
-            {
-              "collectionName": "users",
-              "description": "用户信息表",
-              "aclTag": "READONLY"
-            },
-            {
-              "collectionName": "massage_sessions",
-              "description": "按摩记录表",
-              "aclTag": "READONLY"
-            }
-          ]
-        }
-      }
-    }
-  },
+  "region": "ap-shanghai",
   "functionRoot": "./cloudfunctions",
   "functions": [
     {
       "name": "getOpenId",
       "timeout": 5,
       "envVariables": {},
-      "runtime": "Nodejs18.15",
-      "memorySize": 128,
+      "runtime": "Nodejs16.13",
+      "memorySize": 256,
+      "handler": "index.main"
+    },
+    {
+      "name": "massageRecord",
+      "timeout": 5,
+      "envVariables": {},
+      "runtime": "Nodejs16.13",
+      "memorySize": 256,
       "handler": "index.main"
     }
   ],
-  "region": "ap-shanghai"
+  "framework": {
+    "name": "miniprogram",
+    "plugins": {
+      "@cloudbase/framework-plugin-function": {
+        "use": "@cloudbase/framework-plugin-function",
+        "inputs": {
+          "functionRootPath": "./cloudfunctions",
+          "functions": [
+            {
+              "name": "getOpenId",
+              "config": {
+                "timeout": 5,
+                "envVariables": {},
+                "runtime": "Nodejs16.13",
+                "memorySize": 256
+              }
+            },
+            {
+              "name": "massageRecord",
+              "config": {
+                "timeout": 5,
+                "envVariables": {},
+                "runtime": "Nodejs16.13",
+                "memorySize": 256
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
 }
