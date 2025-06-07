@@ -23,14 +23,6 @@
               "runtime": "Nodejs18.15",
               "memorySize": 128,
               "handler": "index.main"
-            },
-            {
-              "name": "massageRecord",
-              "timeout": 10,
-              "envVariables": {},
-              "runtime": "Nodejs18.15",
-              "memorySize": 256,
-              "handler": "index.main"
             }
           ]
         }
@@ -45,7 +37,7 @@
               "aclTag": "READONLY"
             },
             {
-              "collectionName": "massage_records",
+              "collectionName": "massage_sessions",
               "description": "按摩记录表",
               "aclTag": "READONLY"
             }
@@ -62,14 +54,6 @@
       "envVariables": {},
       "runtime": "Nodejs18.15",
       "memorySize": 128,
-      "handler": "index.main"
-    },
-    {
-      "name": "massageRecord",
-      "timeout": 10,
-      "envVariables": {},
-      "runtime": "Nodejs18.15",
-      "memorySize": 256,
       "handler": "index.main"
     }
   ],
