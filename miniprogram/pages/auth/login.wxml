@@ -1,0 +1,31 @@
+<!-- miniprogram/pages/auth/login.wxml -->
+<view class="login-container">
+  <image src="/images/default-avatar.png" class="avatar" />
+  <text class="title">欢迎使用旅摩车载按摩椅</text>
+  <text class="subtitle">请登录以享受个性化服务</text>
+
+  <button 
+    wx:if="{{canIUseGetUserProfile}}" 
+    class="login-button" 
+    bindtap="getUserProfile"
+  >
+    微信一键登录
+  </button>
+
+  <view class="agreement">
+    <checkbox-group bindchange="handleAgreementChange">
+      <checkbox value="agree" />
+    </checkbox-group>
+    <text>我已阅读并同意</text>
+    <text class="link">《用户协议》</text>
+    <text>和</text>
+    <text class="link">《隐私政策》</text>
+  </view>
+
+  <button 
+    class="guest-button" 
+    bindtap="navigateToService"
+  >
+    游客体验
+  </button>
+</view>

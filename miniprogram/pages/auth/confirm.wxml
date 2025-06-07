@@ -1,0 +1,14 @@
+<!-- miniprogram/pages/auth/confirm.wxml -->
+<view class="confirm-container">
+  <image src="{{userInfo.avatarUrl || '/images/default-avatar.png'}}" class="avatar" />
+  <text class="nickname">{{userInfo.nickName || '旅摩用户'}}</text>
+  <text class="welcome">欢迎回来！</text>
+
+  <button class="confirm-button" bindtap="confirmLogin">
+    确认登录
+  </button>
+
+  <button class="edit-button" bindtap="editProfile">
+    编辑资料
+  </button>
+</view>
