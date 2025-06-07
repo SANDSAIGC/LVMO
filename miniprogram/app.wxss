@@ -1,144 +1,121 @@
 /**app.wxss**/
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
+@import './styles/theme/tdesign-theme.wxss';
 
-/* Tesla风格全局样式 */
+/* 全局样式 */
 page {
   background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
   color: #ffffff;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  min-height: 100vh;
 }
 
-/* 玻璃拟态效果 */
+/* Tesla风格容器 */
+.tesla-container {
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  min-height: 100vh;
+  padding: 0;
+}
+
+/* 玻璃拟态卡片 */
 .glass-card {
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 16rpx;
-  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-/* 按钮样式 */
-.tesla-button {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+/* 渐变按钮 */
+.gradient-button {
+  background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
   border: none;
-  border-radius: 12rpx;
+  border-radius: 12px;
   color: white;
-  padding: 24rpx 48rpx;
-  font-size: 32rpx;
   font-weight: 600;
-  box-shadow: 0 4rpx 16rpx rgba(102, 126, 234, 0.3);
+  padding: 16px 32px;
+  box-shadow: 0 4px 16px rgba(108, 92, 231, 0.3);
   transition: all 0.3s ease;
 }
 
-.tesla-button:active {
-  transform: translateY(2rpx);
-  box-shadow: 0 2rpx 8rpx rgba(102, 126, 234, 0.3);
+.gradient-button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 8px rgba(108, 92, 231, 0.3);
 }
 
-/* 文本样式 */
-.title {
-  font-size: 48rpx;
+/* 次要按钮 */
+.secondary-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  color: white;
+  font-weight: 500;
+  padding: 16px 32px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.secondary-button:active {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(1px);
+}
+
+/* 输入框样式 */
+.tesla-input {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  color: white;
+  padding: 16px;
+  backdrop-filter: blur(10px);
+  font-size: 16px;
+}
+
+.tesla-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* 标题样式 */
+.tesla-title {
+  font-size: 28px;
   font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 16rpx;
+  color: white;
+  margin-bottom: 8px;
+  text-align: center;
 }
 
-.subtitle {
-  font-size: 28rpx;
+.tesla-subtitle {
+  font-size: 16px;
   color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 32rpx;
-}
-
-.text-primary {
-  color: #667eea;
-}
-
-.text-secondary {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-/* 布局样式 */
-.flex-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.flex-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.justify-between {
-  justify-content: space-between;
-}
-
-.align-center {
-  align-items: center;
-}
-
-/* 间距样式 */
-.margin-top-small {
-  margin-top: 16rpx;
-}
-
-.margin-top-medium {
-  margin-top: 32rpx;
-}
-
-.margin-top-large {
-  margin-top: 48rpx;
-}
-
-.padding-small {
-  padding: 16rpx;
-}
-
-.padding-medium {
-  padding: 32rpx;
-}
-
-.padding-large {
-  padding: 48rpx;
+  text-align: center;
+  margin-bottom: 32px;
 }
 
 /* 状态指示器 */
 .status-indicator {
-  width: 16rpx;
-  height: 16rpx;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  margin-right: 16rpx;
+  display: inline-block;
+  margin-right: 8px;
 }
 
 .status-connected {
-  background: #4CAF50;
-  box-shadow: 0 0 16rpx rgba(76, 175, 80, 0.5);
+  background: #00b894;
+  box-shadow: 0 0 8px rgba(0, 184, 148, 0.5);
 }
 
 .status-disconnected {
-  background: #f44336;
-  box-shadow: 0 0 16rpx rgba(244, 67, 54, 0.5);
+  background: #e17055;
+  box-shadow: 0 0 8px rgba(225, 112, 85, 0.5);
 }
 
 .status-connecting {
-  background: #ff9800;
-  box-shadow: 0 0 16rpx rgba(255, 152, 0, 0.5);
+  background: #fdcb6e;
+  box-shadow: 0 0 8px rgba(253, 203, 110, 0.5);
   animation: pulse 2s infinite;
 }
 
+/* 脉冲动画 */
 @keyframes pulse {
   0% {
     opacity: 1;
@@ -151,43 +128,116 @@ page {
   }
 }
 
-/* 卡片样式 */
-.card {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 16rpx;
-  padding: 32rpx;
-  margin: 16rpx;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.2);
+/* 滑块样式 */
+.tesla-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
 }
 
-/* 输入框样式 */
-.input {
+.tesla-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(108, 92, 231, 0.4);
+}
+
+/* 开关样式 */
+.tesla-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.tesla-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.tesla-switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.2);
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.tesla-switch-slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .tesla-switch-slider {
+  background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+}
+
+input:checked + .tesla-switch-slider:before {
+  transform: translateX(26px);
+}
+
+/* 卡片列表 */
+.card-list {
+  padding: 16px;
+}
+
+.card-item {
   background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12rpx;
-  padding: 24rpx;
-  color: white;
-  font-size: 32rpx;
-}
-
-.input::placeholder {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-/* 列表样式 */
-.list-item {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 12rpx;
-  padding: 32rpx;
-  margin-bottom: 16rpx;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 }
 
-.list-item:active {
+.card-item:active {
+  transform: translateY(2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* 图标样式 */
+.icon {
+  font-size: 24px;
+  color: #6c5ce7;
+  margin-right: 12px;
+}
+
+/* 徽章样式 */
+.badge {
+  background: linear-gradient(135deg, #6c5ce7 0%, #a29bfe 100%);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* 分割线 */
+.divider {
+  height: 1px;
   background: rgba(255, 255, 255, 0.1);
-  transform: scale(0.98);
+  margin: 20px 0;
 }
 
 /* 加载动画 */
@@ -195,19 +245,77 @@ page {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 64rpx;
+  padding: 40px;
 }
 
 .loading-spinner {
-  width: 64rpx;
-  height: 64rpx;
-  border: 4rpx solid rgba(255, 255, 255, 0.2);
-  border-top: 4rpx solid #667eea;
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
   border-radius: 50%;
-  animation: spin 1s linear infinite;
+  border-top-color: #6c5ce7;
+  animation: spin 1s ease-in-out infinite;
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 空状态 */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.empty-state .icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.empty-state .title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.empty-state .description {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* 响应式设计 */
+@media (max-width: 375px) {
+  .tesla-title {
+    font-size: 24px;
+  }
+  
+  .card-item {
+    padding: 16px;
+  }
+  
+  .gradient-button,
+  .secondary-button {
+    padding: 14px 24px;
+  }
+}
+
+/* 安全区域适配 */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.safe-area-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+/* 深色模式适配 */
+@media (prefers-color-scheme: dark) {
+  page {
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  }
 }
