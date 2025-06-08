@@ -8,7 +8,7 @@
   <view class="service-grid">
     <block wx:for="{{services}}" wx:key="id">
       <view 
-        class="service-item" 
+        class="card service-item"
         bindtap="selectService" 
         data-id="{{item.id}}"
       >

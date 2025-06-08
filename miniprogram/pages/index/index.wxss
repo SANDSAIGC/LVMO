@@ -1,0 +1,114 @@
+/* miniprogram/pages/index/index.wxss */
+@import "/app.wxss";
+
+/* Page styles are now global in app.wxss */
+
+.index-container {
+  padding: 32rpx; /* This could be replaced by using <view class="container"> in WXML if only padding is needed */
+  /* box-sizing: border-box; (Covered by global *) */
+  /* min-height: 100vh; (Covered by global page style if .index-container is the main page wrapper) */
+}
+
+/* Welcome Area */
+.welcome-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40rpx; /* 5 * 8rpx */
+}
+
+.logo {
+  width: 200rpx; /* 25 * 8rpx */
+  height: 100rpx; /* 12.5 * 8rpx, adjust as per actual logo aspect ratio */
+  margin-bottom: 16rpx; /* 2 * 8rpx */
+}
+
+.welcome-text {
+  font-size: 32rpx; /* Subtitle/Large Body */
+  color: rgba(255, 255, 255, 0.7); /* Secondary Text */
+}
+
+/* Common Card Style is now global in app.wxss */
+/* Ensure .card class is used in WXML, e.g., class="card device-status-card" */
+
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16rpx; /* 2 * 8rpx */
+}
+
+.card-icon {
+  width: 40rpx; /* 5 * 8rpx */
+  height: 40rpx;
+  margin-right: 16rpx;
+}
+
+.card-title {
+  font-size: 32rpx; /* Subtitle/Large Body */
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content for device status card by default */
+}
+
+/* Device Status Card Specifics */
+.device-status-card .status-text {
+  font-size: 28rpx; /* Body */
+  margin-bottom: 24rpx; /* 3 * 8rpx */
+}
+.device-status-card .status-text.connected {
+  color: #2ecc71; /* SuccessGreen */
+}
+.device-status-card .status-text.unconnected {
+  color: rgba(255, 255, 255, 0.7); /* SecondaryText */
+}
+.device-status-card .status-text.connecting {
+  color: #f1c40f; /* WarningYellow */
+}
+
+/* Common Button Styles are now global in app.wxss */
+/* Ensure .button-primary, .button-secondary, .small-button classes are used in WXML */
+
+
+/* Quick Actions Grid */
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+  gap: 24rpx; /* 3 * 8rpx */
+  margin-bottom: 32rpx;
+}
+
+.action-card {
+  /* This card has specific padding different from global .card */
+  /* It should be used as class="card action-card" in WXML */
+  padding: 32rpx 24rpx; /* More padding top/bottom for vertical feel */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.action-icon {
+  width: 80rpx; /* 10 * 8rpx */
+  height: 80rpx;
+  margin-bottom: 16rpx; /* 2 * 8rpx */
+}
+
+.action-name {
+  font-size: 28rpx; /* Body */
+  color: #FFFFFF;
+}
+
+/* Promo Card (example) */
+.promo-card {
+  /* This card has specific styles different from global .card */
+  /* It should be used as class="card promo-card" in WXML */
+  text-align: center;
+  font-size: 24rpx; /* Caption/Small */
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(108, 92, 231, 0.2); /* Accent color, more translucent */
+}

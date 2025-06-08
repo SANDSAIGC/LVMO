@@ -1,0 +1,144 @@
+/* miniprogram/pages/connect/connect.wxss */
+@import "/app.wxss"; /* Assuming button styles and card styles will be moved here */
+
+/* Page styles are now global in app.wxss */
+
+.connect-container {
+  padding: 32rpx; /* Retained as specific page content padding */
+  /* box-sizing: border-box; (Covered by global *) */
+  /* min-height: 100vh; (Covered by global page) */
+}
+
+.page-header {
+  margin-bottom: 32rpx;
+  text-align: left;
+}
+
+.page-title {
+  font-size: 44rpx; /* H1 */
+  font-weight: bold;
+  color: #FFFFFF;
+  display: block;
+  margin-bottom: 8rpx;
+}
+
+.page-subtitle {
+  font-size: 28rpx; /* Body */
+  color: rgba(255, 255, 255, 0.7); /* Secondary Text */
+}
+
+.scan-status-area {
+  margin-bottom: 32rpx;
+  text-align: center;
+}
+
+.scan-status-area .status-text {
+  display: block;
+  font-size: 24rpx; /* Caption/Small */
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 16rpx;
+}
+.scan-status-area .status-text.error {
+  color: #e74c3c; /* ErrorRed */
+  font-weight: 500;
+}
+.scan-status-area .status-text.info {
+  color: #3498db; /* InfoBlue (example) */
+}
+
+.scan-button {
+  width: 100%; /* Make scan button full width initially */
+  margin-bottom: 16rpx;
+  /* Using button styles that should be global */
+}
+
+/* Device List */
+.device-list {
+  margin-top: 24rpx;
+}
+
+.device-item {
+  display: flex;
+  align-items: center;
+  /* padding: 24rpx; (Covered by global .card padding, as WXML uses class="card device-item") */
+  margin-bottom: 24rpx; /* Gap between cards */
+  /* Inherits .card style from app.wxss or local definition */
+}
+
+.device-item.connected {
+  border-left: 8rpx solid #2ecc71; /* SuccessGreen accent for connected items */
+}
+
+.device-icon {
+  width: 64rpx; /* 8 * 8rpx */
+  height: 64rpx;
+  margin-right: 24rpx;
+}
+
+.device-info {
+  flex-grow: 1;
+}
+
+.device-name {
+  font-size: 32rpx; /* Subtitle/Large Body */
+  font-weight: 500;
+  color: #FFFFFF;
+  display: block;
+  margin-bottom: 4rpx;
+}
+
+.device-rssi {
+  font-size: 24rpx; /* Caption/Small */
+  color: rgba(255, 255, 255, 0.6);
+  display: block;
+  margin-bottom: 4rpx;
+}
+
+.device-status-tag {
+  font-size: 20rpx; /* XSmall */
+  padding: 4rpx 12rpx;
+  border-radius: 8rpx;
+  display: inline-block;
+}
+.device-status-tag.connected {
+  background-color: rgba(46, 204, 113, 0.2); /* SuccessGreen, translucent */
+  color: #2ecc71;
+}
+
+.connect-button, .disconnect-button {
+  margin-left: 16rpx; /* Spacing from device info */
+  flex-shrink: 0; /* Prevent buttons from shrinking */
+  /* Using .small-button styles that should be global */
+}
+
+/* Empty State */
+.empty-state.card {
+  text-align: center;
+  padding: 40rpx;
+}
+
+.empty-icon {
+  width: 120rpx;
+  height: 120rpx;
+  margin-bottom: 24rpx;
+  opacity: 0.5;
+}
+
+.empty-text {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #FFFFFF;
+  margin-bottom: 16rpx;
+  display: block;
+}
+
+.empty-hint {
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.6);
+  display: block;
+  line-height: 1.5;
+}
+
+/* Fallback local definitions for .card, .button-primary, .button-secondary, */
+/* and .small-button are now removed as they are covered by app.wxss. */
+/* WXML should use the global classes like class="card", class="button-primary", etc. */

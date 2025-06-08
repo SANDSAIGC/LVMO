@@ -6,7 +6,7 @@
 
   <button 
     wx:if="{{canIUseGetUserProfile}}" 
-    class="login-button" 
+    class="button-primary"
     bindtap="getUserProfile"
   >
     微信一键登录
@@ -23,7 +23,7 @@
   </view>
 
   <button 
-    class="guest-button" 
+    class="button-secondary"
     bindtap="navigateToService"
   >
     游客体验

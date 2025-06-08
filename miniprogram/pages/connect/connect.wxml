@@ -1,0 +1,47 @@
+<!-- miniprogram/pages/connect/connect.wxml -->
+<view class="connect-container">
+  <view class="page-header">
+    <text class="page-title">搜索设备</text>
+    <text class="page-subtitle">请确保设备已开机并开启蓝牙</text>
+  </view>
+
+  <view class="scan-status-area">
+    <block wx:if="{{!bluetoothEnabled}}">
+      <text class="status-text error">蓝牙未开启，请在系统设置中打开蓝牙</text>
+    </block>
+    <block wx:else>
+      <button class="button-secondary scan-button" bindtap="startScan" disabled="{{isScanning}}">
+        {{isScanning ? '正在扫描...' : '重新扫描'}}
+      </button>
+      <text wx:if="{{isScanning}}" class="status-text info">正在搜寻附近的按摩设备...</text>
+    </block>
+  </view>
+
+  <view class="device-list">
+    <block wx:if="{{devices.length === 0 && !isScanning}}">
+      <view class="empty-state card">
+        <image src="/images/icons/no-device.png" class="empty-icon" mode="aspectFit"/>
+        <text class="empty-text">未发现可用设备</text>,
+        <text class="empty-hint">请检查设备电源和蓝牙是否开启，或尝试重新扫描。</text>
+      </view>
+    </block>
+    <block wx:else>
+      <block wx:for="{{devices}}" wx:key="deviceId">
+        <view class="card device-item {{item.connected ? 'connected' : ''}}">
+          <image src="/images/icons/bluetooth-signal.png" class="device-icon" mode="aspectFit"/>
+          <view class="device-info">
+            <text class="device-name">{{item.name}}</text>
+            <text class="device-rssi">信号强度: {{item.RSSI}}dBm</text>
+            <text wx:if="{{item.connected}}" class="device-status-tag connected">已连接</text>
+          </view>
+          <block wx:if="{{item.connected}}">
+            <button class="button-secondary small-button disconnect-button" bindtap="disconnectDevice" data-device="{{item}}">断开</button>
+          </block>
+          <block wx:else>
+            <button class="button-primary small-button connect-button" bindtap="connectToDevice" data-device="{{item}}">连接</button>
+          </block>
+        </view>
+      </block>
+    </block>
+  </view>
+</view>

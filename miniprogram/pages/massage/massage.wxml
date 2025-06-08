@@ -1,0 +1,51 @@
+<!-- miniprogram/pages/massage/massage.wxml -->
+<view class="massage-container">
+  <view class="header-info card">
+    <text class="current-mode-name">{{currentMode.name}}</text>
+    <text class="timer-display">{{formatTime(remainingSeconds)}}</text>
+    <view class="progress-bar-container">
+      <view class="progress-bar" style="width: {{progress}}%;"></view>
+    </view>
+  </view>
+
+  <!-- Optional: Body/Seat Animation Area -->
+  <view class="animation-area card">
+    <image src="/images/massage-animation.gif" class="massage-animation-img" mode="aspectFit"/>
+    <!-- Or a static body diagram with highlighted parts -->
+    <!-- <view class="body-diagram"> -->
+      <!-- SVG or image parts here -->
+    <!-- </view> -->
+    <text class="animation-placeholder-text">按摩区域示意</text>
+  </view>
+
+  <view class="controls-area card">
+    <view class="control-group intensity-controls">
+      <text class="control-label">力度调节</text>
+      <view class="intensity-buttons">
+        <button class="control-button icon-button" bindtap="decreaseIntensity" disabled="{{intensity <= 1}}">
+          <image src="/images/icons/minus.png" class="control-icon" />
+        </button>
+        <text class="intensity-value">{{intensity}}</text>
+        <button class="control-button icon-button" bindtap="increaseIntensity" disabled="{{intensity >= maxIntensity}}">
+          <image src="/images/icons/plus.png" class="control-icon" />
+        </button>
+      </view>
+    </view>
+
+    <view class="control-group main-controls">
+      <button class="control-button main-action-button" bindtap="togglePause">
+        <image src="{{isPaused ? '/images/icons/play.png' : '/images/icons/pause.png'}}" class="control-icon large-icon"/>
+        <text>{{isPaused ? '继续' : '暂停'}}</text>
+      </button>
+      <button class="control-button main-action-button stop-button" bindtap="stopMassage">
+        <image src="/images/icons/stop.png" class="control-icon large-icon"/>
+        <text>停止</text>
+      </button>
+    </view>
+
+    <!-- Optional: Other controls like heat, specific mode adjustments -->
+    <!-- <view class="control-group other-controls">
+      <button class="control-button">加热 开/关</button>
+    </view> -->
+  </view>
+</view>

@@ -1,0 +1,44 @@
+<!-- miniprogram/pages/index/index.wxml -->
+<view class="index-container">
+  <!-- Optional: Welcome/Logo Area -->
+  <view class="welcome-area">
+    <image class="logo" src="/images/logo_transparent.png" mode="aspectFit" />
+    <text class="welcome-text">欢迎使用 旅摩</text>
+  </view>
+
+  <!-- Device Status Card -->
+  <view class="card device-status-card">
+    <view class="card-header">
+      <image src="/images/icons/seat.png" class="card-icon" mode="aspectFit"/>
+      <text class="card-title">设备状态</text>
+    </view>
+    <view class="card-content">
+      <block wx:if="{{deviceStatus === 'connected'}}">
+        <text class="status-text connected">{{deviceName}} 已连接</text>
+        <button class="button-secondary small-button" bindtap="disconnectDevice">断开连接</button>
+      </block>
+      <block wx:elif="{{deviceStatus === 'connecting'}}">
+        <text class="status-text connecting">正在连接设备...</text>
+      </block>
+      <block wx:else>
+        <text class="status-text unconnected">暂无设备连接</text>
+        <button class="button-primary" bindtap="connectDevice">立即连接</button>
+      </block>
+    </view>
+  </view>
+
+  <!-- Quick Actions Grid -->
+  <view class="quick-actions-grid">
+    <block wx:for="{{quickActions}}" wx:key="id">
+      <view class="card action-card" bindtap="navigateToPage" data-page="{{item.page}}">
+        <image src="{{item.icon}}" class="action-icon" mode="aspectFit"/>
+        <text class="action-name">{{item.name}}</text>
+      </view>
+    </block>
+  </view>
+
+  <!-- Optional: Promotional Banner or Tips -->
+  <view class="card promo-card">
+    <text>新用户专享：首次按摩体验仅需1元！</text>
+  </view>
+</view>

@@ -1,0 +1,153 @@
+/* miniprogram/pages/history/history.wxss */
+@import "/app.wxss"; /* For .card and global styles */
+
+/* Page styles are now global in app.wxss */
+
+.history-container {
+  padding: 32rpx; /* Retained as specific page content padding */
+  /* box-sizing: border-box; (Covered by global *) */
+  /* min-height: 100vh; (Covered by global page) */
+}
+
+.page-header {
+  margin-bottom: 32rpx;
+}
+
+.page-title {
+  font-size: 44rpx; /* H1 */
+  font-weight: bold;
+  color: #FFFFFF;
+}
+
+/* Loading and Empty State (assuming .card is global) */
+.loading-state, .empty-state {
+  text-align: center;
+  padding: 40rpx;
+}
+.empty-icon {
+  width: 120rpx;
+  height: 120rpx;
+  margin-bottom: 24rpx;
+  opacity: 0.5;
+}
+.empty-text {
+  font-size: 32rpx;
+  font-weight: 500;
+  margin-bottom: 16rpx;
+  display: block;
+}
+.empty-hint {
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.6);
+  display: block;
+  line-height: 1.5;
+}
+
+
+/* Timeline Styles */
+.timeline {
+  position: relative;
+  padding-left: 40rpx; /* Space for the timeline line and nodes */
+}
+
+.timeline-date-group {
+  margin-bottom: 32rpx; /* Space between date groups */
+  position: relative; /* For timeline line pseudo-element if needed across groups */
+}
+.timeline-date-group:first-child::before, .timeline-date-group:not(:first-child)::before {
+  content: '';
+  position: absolute;
+  left: -21rpx; /* (node_width / 2) + line_offset */
+  top: 0;
+  bottom: 0;
+  width: 2rpx;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: 0;
+}
+/* Hide line for the very first group if it's the only one or styled differently */
+/* .timeline-date-group:first-child:last-child::before { display: none; } */
+
+
+.timeline-date-header {
+  margin-bottom: 16rpx;
+  padding-left: 0; /* Align with content, not timeline line */
+  position: relative; /* To sit above the line */
+  z-index: 1;
+}
+
+.date-text {
+  font-size: 32rpx; /* Subtitle/Large Body */
+  font-weight: bold;
+  color: #FFFFFF;
+  background: #1a1a2e; /* Match page background to "break" the line */
+  padding: 4rpx 16rpx 4rpx 0; /* Give some space around text */
+  display: inline-block;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 24rpx; /* Space between items in the same date group */
+  /* padding: 24rpx; (Covered by global .card padding, as WXML uses class="timeline-item card") */
+  /* Inherits .card style */
+}
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-node {
+  position: absolute;
+  left: -50rpx; /* Adjust to center on the timeline line: -(node_width/2) - padding_left_of_timeline */
+  top: 50%; /* Center vertically relative to card content (approx) */
+  transform: translateY(-50%);
+  width: 20rpx; /* 2.5 * 8rpx */
+  height: 20rpx;
+  background-color: #6c5ce7; /* Accent color */
+  border-radius: 50%;
+  border: 4rpx solid #1a1a2e; /* Match page background for "punch-out" effect */
+  z-index: 1;
+}
+/* Adjust top for first item in a group if header is tall */
+.timeline-date-group .timeline-item:first-child .timeline-node {
+    top: 36rpx; /* Approximation, adjust based on card content height */
+}
+
+
+.timeline-content {
+  /* Styles for content within the card */
+}
+
+.record-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16rpx;
+}
+
+.record-mode-name {
+  font-size: 32rpx; /* Subtitle/Large Body */
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+.record-time {
+  font-size: 24rpx; /* Caption/Small */
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.record-details {
+  margin-bottom: 8rpx;
+}
+
+.detail-item {
+  font-size: 24rpx; /* Caption/Small */
+  color: rgba(255, 255, 255, 0.8);
+  margin-right: 24rpx;
+  display: inline-block; /* Or block if they should stack */
+}
+.detail-item.small-text {
+    font-size: 20rpx; /* XSmall */
+    color: rgba(255,255,255,0.5);
+}
+
+/* Fallback local definition for .card and .card:active is now removed. */
+/* WXML uses class="card" which picks up styles from app.wxss. */

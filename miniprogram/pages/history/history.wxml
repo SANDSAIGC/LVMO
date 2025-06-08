@@ -1,0 +1,48 @@
+<!-- miniprogram/pages/history/history.wxml -->
+<view class="history-container">
+  <view class="page-header">
+    <text class="page-title">按摩历史</text>
+    <!-- Optional: Filters -->
+    <!-- <view class="filters">...</view> -->
+  </view>
+
+  <block wx:if="{{isLoading}}">
+    <view class="loading-state card">
+      <text>正在加载历史记录...</text> <!-- Replace with a proper loading component/animation -->
+    </view>
+  </block>
+  <block wx:elif="{{historyRecords.length === 0}}">
+    <view class="empty-state card">
+      <image src="/images/icons/no-history.png" class="empty-icon" mode="aspectFit"/>
+      <text class="empty-text">暂无按摩历史</text>
+      <text class="empty-hint">开始一次按摩，记录您的健康生活。</text>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="timeline">
+      <block wx:for="{{historyRecords}}" wx:for-item="dateGroup" wx:key="dateDisplay">
+        <view class="timeline-date-group">
+          <view class="timeline-date-header">
+            <text class="date-text">{{dateGroup.dateDisplay}}</text>
+          </view>
+          <block wx:for="{{dateGroup.records}}" wx:for-item="record" wx:key="id">
+            <view class="timeline-item card" bindtap="viewRecordDetail" data-record-id="{{record.id}}">
+              <view class="timeline-node"></view>
+              <view class="timeline-content">
+                <view class="record-header">
+                  <text class="record-mode-name">{{record.modeName}}</text>
+                  <text class="record-time">{{record.timeDisplay}}</text>
+                </view>
+                <view class="record-details">
+                  <text class="detail-item">时长: {{record.duration}}分钟</text>
+                  <text class="detail-item" wx:if="{{record.cost}}">消费: ¥{{record.cost}}</text>
+                </view>
+                <text class="detail-item small-text" wx:if="{{record.deviceId}}">设备: {{record.deviceId}}</text>
+              </view>
+            </view>
+          </block>
+        </view>
+      </block>
+    </view>
+  </block>
+</view>

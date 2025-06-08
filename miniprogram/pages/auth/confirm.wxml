@@ -4,11 +4,11 @@
   <text class="nickname">{{userInfo.nickName || '旅摩用户'}}</text>
   <text class="welcome">欢迎回来！</text>
 
-  <button class="confirm-button" bindtap="confirmLogin">
+  <button class="button-primary" bindtap="confirmLogin">
     确认登录
   </button>
 
-  <button class="edit-button" bindtap="editProfile">
+  <button class="button-secondary" bindtap="editProfile">
     编辑资料
   </button>
 </view>
